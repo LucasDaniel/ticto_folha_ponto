@@ -56,6 +56,7 @@ abstract class Controller extends BaseController
     }
 
     public function create(Request $request) {
+        $this->validate->validate($request);
         return $this->service->create($request);
     }
 }
