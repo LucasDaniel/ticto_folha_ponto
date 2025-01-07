@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('work_time', function (Blueprint $table) {
+        Schema::create('folha_ponto', function (Blueprint $table) {
             $table->id();
             $table->string('cpf');
             $table->string('email');
@@ -30,6 +30,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('work_time');
+        Schema::dropIfExists('folha_ponto');
     }
 };
