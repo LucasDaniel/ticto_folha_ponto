@@ -19,7 +19,7 @@ class AuthToken
         if ($request->input('token') !== 'my-secret-token') {
             return redirect('/home');
         }
-            */
+        */
  
         return $next($request);
     }

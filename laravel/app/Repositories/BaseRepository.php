@@ -4,6 +4,8 @@ namespace App\Repositories;
 
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Model;
+use App\Exceptions\GetModelException;
+use Illuminate\Http\Request;
 
 class BaseRepository
 {
@@ -22,14 +24,25 @@ class BaseRepository
      * @return Model
      */
     public function find(int $id): Model|null {
-        return $this->model::find($id);
+        $find = $this->model::find($id);
+        return !$find ? throw new GetUserException() : $find;
     }
 
     public function create(array $args): Model {
         return $this->model::create($args);
     }
 
+    public function update(Request $request, int $id) {
+        $model = $this->model::find($id);
+        if (!$model) throw new GetModelException();
+        $input = $request->all();
+        $model->fill($input)->save();
+        return $model;
+    }
+
     public function delete(int $id) {
-        return $this->model->find($id)->delete();
+        $model = $this->model::find($id);
+        if (!$model) throw new GetModelException();
+        return $model->delete();
     }
 }

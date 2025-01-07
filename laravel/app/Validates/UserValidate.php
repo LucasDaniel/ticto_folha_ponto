@@ -12,7 +12,7 @@ class UserValidate extends BaseValidate {
         $request->validate([
             'nivel' => 'required|string',
             'nome' => 'required|string',
-            'email' => 'required|email|unique:users',
+            'email' => 'required|email',
             'senha' => 'required|string',
         ]);
         

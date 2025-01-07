@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use App\Dictionary\Dictionary;
 use App\Exceptions\GetUserException;
 use Illuminate\Database\Eloquent\Model;
@@ -39,20 +40,11 @@ abstract class Controller extends BaseController
     }
 
     public function delete($id) {
-        
-        $this->return = false;
-        //if (!$this->service->find($id)) throw new DeleteException();
-        $this->return = $this->service->delete($id);
-            
-        return $this->return;
+        return $this->service->delete($id);
     }
 
-    public function update(Request $request,int $id) {
-        return 1;//$this->service->update($id);
-    }
-
-    public function patch(Request $request,int $id) {
-        return 1;//$this->service->patch($id);
+    public function update(Request $request, int $id) {
+        return $this->service->update($request,$id);
     }
 
     public function create(Request $request) {
