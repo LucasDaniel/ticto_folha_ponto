@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('token');
             $table->dateTime('expira');
             $table->timestamps();
+            $table->softDeletes();
 
             $table->foreign('id_usuario')->references('id')->on('usuario');
         });
