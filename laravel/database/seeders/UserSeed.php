@@ -20,5 +20,19 @@ class UserSeed extends Seeder
             'email' => 'admin@gmail.com',
             'senha' => Hash::make('a')
         ]);
+
+        User::factory()->create([
+            'nivel' => 'funcionario',
+            'nome' => 'Lucas',
+            'email' => 'lucas@gmail.com',
+            'senha' => Hash::make('b')
+        ]);
+
+        User::factory()->create([
+            'nivel' => 'funcionario',
+            'nome' => 'Daniel',
+            'email' => 'daniel@gmail.com',
+            'senha' => Hash::make('c')
+        ]);
     }
 }

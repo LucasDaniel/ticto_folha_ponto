@@ -21,5 +21,17 @@ class UsuarioAutenticacaoSeed extends Seeder
             'token' => Hash::make('Admin'),
             'expira' => Carbon::now()->addMinutes(10)->format("Y-m-d H:i:s")
         ]);
+
+        UsuarioAutenticacao::factory()->create([
+            'id_usuario' => 2,
+            'token' => Hash::make('lucas'),
+            'expira' => Carbon::now()->addMinutes(10)->format("Y-m-d H:i:s")
+        ]);
+
+        UsuarioAutenticacao::factory()->create([
+            'id_usuario' => 3,
+            'token' => Hash::make('daniel'),
+            'expira' => Carbon::now()->addMinutes(10)->format("Y-m-d H:i:s")
+        ]);
     }
 }
