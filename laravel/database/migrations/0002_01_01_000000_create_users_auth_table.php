@@ -11,14 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('users_auth', function (Blueprint $table) {
+        Schema::create('usuario_autenticacao', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('id_users');
+            $table->unsignedBigInteger('id_usuario');
             $table->string('token');
-            $table->dateTime('expiration');
+            $table->dateTime('expira');
             $table->timestamps();
 
-            $table->foreign('id_users')->references('id')->on('users');
+            $table->foreign('id_usuario')->references('id')->on('usuario');
         });
     }
 
@@ -27,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('users_auth');
+        Schema::dropIfExists('usuario_autenticacao');
     }
 };
