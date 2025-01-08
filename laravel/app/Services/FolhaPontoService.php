@@ -16,6 +16,10 @@ class FolhaPontoService extends BaseService
         $this->repository = new FolhaPontoRepository();
     }
 
+    public function listByDate(Request $request) {
+        return $this->repository->listByDate($request->all());
+    }
+
     public function createNewFolhaPonto(Request $request) {
         return $this->repository->create($request->all());
     }

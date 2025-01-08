@@ -12,5 +12,5 @@ Route::post('/user',[UserController::class, 'createNewUser']);
 Route::put('/user/{id}',[UserController::class, 'update']);
 Route::delete('/user/{id}',[UserController::class, 'deleteUserAndUsuarioAutenticacao']);
 
-Route::get('/folha-ponto/all',[FolhaPontoController::class, 'list']);
+Route::post('/folha-ponto/list-by-date',[FolhaPontoController::class, 'listByDate']);
 Route::post('/folha-ponto',[FolhaPontoController::class, 'create']);
