@@ -315,9 +315,10 @@
         </div>
 
         <!-- Login Form -->
-        <form>
+        <form action="http://127.0.0.1:8000/home" method="post">
+            @csrf
             <input type="text" id="login" class="fadeIn second" name="login" placeholder="login">
-            <input type="text" id="password" class="fadeIn third" name="login" placeholder="senha">
+            <input type="text" id="password" class="fadeIn third" name="senha" placeholder="senha">
             <input type="submit" class="fadeIn fourth" value="Logar">
         </form>
 
