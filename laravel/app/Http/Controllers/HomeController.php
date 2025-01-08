@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Services\LoginService;
 
-class SiteController extends Controller
+class TictoController extends Controller
 {
     public function home(Request $request) {
         $loginService = new LoginService();
