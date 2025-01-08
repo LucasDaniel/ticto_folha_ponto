@@ -85,7 +85,26 @@
     <!-- Begin page content -->
     <main role="main" class="container">
         <h2 class="mt-5">Funcionarios</h2>
-        {{ $users }}
+        <table class="table">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">Nome</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                @forelse ($users as $user)
+                <tr>
+                    <td>{{ $user->nome }}</td>
+                    <td>{{ $user->email }}</td>
+                    <td><a>Editar</a> - <a>Apagar</a></td>
+                </tr>
+                @empty
+                <tr>Sem funcionarios</tr>
+                @endforelse
+            </tbody>
+        </table>
     </main>
 
     <footer class="footer">
