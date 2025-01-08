@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Services\LoginService;
 
-class HomeController extends Controller
+class SiteController extends Controller
 {
     public function home(Request $request) {
         $loginService = new LoginService();
@@ -14,7 +14,7 @@ class HomeController extends Controller
         $senha = $request->get('senha');
 
         $user = $loginService->login($email, $senha);
-        
+
         if (!$user) return view('login');
 
         return view('home',['nivel'=>$user['nivel']]);
