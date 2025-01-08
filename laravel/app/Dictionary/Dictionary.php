@@ -13,6 +13,10 @@ trait Dictionary {
             'getUser' => [
                 'msg' => "Error on get user!",
                 'code' => 503
+            ],
+            'notAuthenticate' => [
+                'msg' => "Error on get user!",
+                'code' => 503
             ]
         ]
     ];

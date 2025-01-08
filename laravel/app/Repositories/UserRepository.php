@@ -13,4 +13,12 @@ class UserRepository extends BaseRepository
 	public function __construct() {
 		$this->model = new User();
 	}	
+	
+	public function listAllFuncionarios() {
+		return $this->model::where('nivel','funcionario')->get();
+	}
+
+	public function login(string $email,string $senha) {
+		return $this->model::where('email',$email)->first();
+	}
 }

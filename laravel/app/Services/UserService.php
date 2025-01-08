@@ -18,6 +18,10 @@ class UserService extends BaseService
         $this->repository = new UserRepository();
     }
 
+    public function listAllFuncionarios() {
+        return $this->repository->listAllFuncionarios();
+    }
+
     public function createNewUser(Request $request) {
         $user = $this->repository->create($request->all());
         $usuarioAutenticacaoService = new UsuarioAutenticacaoService();

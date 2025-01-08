@@ -317,8 +317,8 @@
         <!-- Login Form -->
         <form action="http://127.0.0.1:8000/home" method="post">
             @csrf
-            <input type="text" id="login" class="fadeIn second" name="login" placeholder="login">
-            <input type="text" id="password" class="fadeIn third" name="senha" placeholder="senha">
+            <input type="text" id="email" class="fadeIn second" name="email" placeholder="Email">
+            <input type="password" id="password" class="fadeIn third" name="senha" placeholder="Senha">
             <input type="submit" class="fadeIn fourth" value="Logar">
         </form>
 

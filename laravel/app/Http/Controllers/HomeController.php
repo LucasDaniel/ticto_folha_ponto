@@ -3,10 +3,20 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Services\LoginService;
 
 class HomeController extends Controller
 {
     public function home(Request $request) {
-        return view('home');
+        $loginService = new LoginService();
+
+        $email = $request->get('email');
+        $senha = $request->get('senha');
+
+        $user = $loginService->login($email, $senha);
+        
+        if (!$user) return view('login');
+
+        return view('home',['nivel'=>$user['nivel']]);
     }
 }

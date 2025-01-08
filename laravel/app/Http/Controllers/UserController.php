@@ -14,6 +14,10 @@ class UserController extends Controller
         $this->validate = new UserValidate();
     }
 
+    public function listAllFuncionarios() {
+        return $this->service->listAllFuncionarios();
+    }
+
     public function createNewUser(Request $request) {
         $this->validate->validate($request);
         $request->merge([
