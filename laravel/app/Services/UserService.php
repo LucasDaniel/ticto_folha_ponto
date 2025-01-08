@@ -22,7 +22,6 @@ class UserService extends BaseService
         $user = $this->repository->create($request->all());
         $usuarioAutenticacaoService = new UsuarioAutenticacaoService();
         return $usuarioAutenticacaoService->createUsuarioAutenticacao($user);
-        return $user;
     }
 
     public function deleteUserAndUsuarioAutenticacao(int $id) {
