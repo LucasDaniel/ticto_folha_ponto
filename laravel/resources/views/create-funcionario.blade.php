@@ -88,28 +88,23 @@
 
     <!-- Begin page content -->
     <main role="main" class="container">
-        <h2 class="mt-5">Funcionarios</h2>
-        <a href="http://127.0.0.1:8000/user/create" class="btn btn-primary btn-lg active mb-10" role="button" aria-pressed="true">Criar novo Usuario</a>
-        <table class="table">
-            <thead class="thead-dark">
-                <tr>
-                    <th scope="col">Nome</th>
-                    <th scope="col">Email</th>
-                    <th scope="col">Ações</th>
-                </tr>
-            </thead>
-            <tbody>
-                @forelse ($users as $user)
-                <tr>
-                    <td>{{ $user->nome }}</td>
-                    <td>{{ $user->email }}</td>
-                    <td><a>Editar</a> - <a>Apagar</a></td>
-                </tr>
-                @empty
-                <tr>Sem funcionarios</tr>
-                @endforelse
-            </tbody>
-        </table>
+        <h2 class="mt-5">Criar Funcionario</h2>
+        <form action="http://127.0.0.1:8000/user/aaa" method="post">
+            @csrf
+            <div class="form-group">
+                <label for="exampleInputEmail1">Nome</label>
+                <input type="text" class="form-control" name="nome" id="exampleInputNome" placeholder="Nome">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Email address</label>
+                <input type="email" class="form-control" name="email" id="exampleInputEmail1" placeholder="Email">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputPassword">Password</label>
+                <input type="password" class="form-control" name="password" id="exampleInputPassword" placeholder="Password">
+            </div>
+            <button type="submit" class="btn btn-primary">Criar</button>
+        </form>
     </main>
 
     <footer class="footer">

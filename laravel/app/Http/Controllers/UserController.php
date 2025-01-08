@@ -23,7 +23,8 @@ class UserController extends Controller
         $request->merge([
             'senha' => Hash::make($request->get('senha')),
         ]);
-        return $this->service->createNewUser($request);
+        $this->service->createNewUser($request);
+        return redirect()->route('/user/create');
     }
 
     public function deleteUserAndUsuarioAutenticacao(int $id) {

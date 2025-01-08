@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Services\LoginService;
 use App\Services\UserService;
+use App\Http\Controllers\UserController;
 
 class TictoController extends Controller
 {
@@ -27,5 +28,23 @@ class TictoController extends Controller
         $users = $userService->listAllFuncionarios();
 
         return view('list-funcionarios',['users'=>$users]);
+    }
+
+    public function userCreate(Request $request) {
+        return view('create-funcionario');
+    }
+
+    public function userCreatePost(Request $request) {
+        $userController = new UserController();
+        $userCreate = $userController->createNewUser($request);
+        dd($userCreate);
+        return view('create-funcionario',['userCreate' => $userCreate]);
+    }
+    
+    public function aaa(Request $request) {
+        $userController = new UserController();
+        $userCreate = $userController->createNewUser($request);
+        dd($userCreate);
+        return view('create-funcionario',['userCreate' => $userCreate]);
     }
 }
