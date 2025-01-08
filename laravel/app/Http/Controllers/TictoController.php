@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Services\LoginService;
+use App\Services\UserService;
 
 class TictoController extends Controller
 {
@@ -18,5 +19,13 @@ class TictoController extends Controller
         if (!$user) return view('login');
 
         return view('home',['nivel'=>$user['nivel']]);
+    }
+
+    public function userList(Request $request) {
+        $userService = new UserService();
+
+        $users = $userService->listAllFuncionarios();
+
+        return view('list-funcionarios',['users'=>$users]);
     }
 }
