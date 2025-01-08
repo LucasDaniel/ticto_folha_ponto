@@ -16,6 +16,10 @@
     <!-- Custom styles for this template -->
     <style>
         /* Sticky footer styles -------------------------------------------------- */
+        .mb-10 {
+            margin-bottom: 1em;
+        }
+
         html {
             position: relative;
             min-height: 100%;
@@ -85,6 +89,7 @@
     <!-- Begin page content -->
     <main role="main" class="container">
         <h2 class="mt-5">Funcionarios</h2>
+        <a href="http://127.0.0.1:8000/criar-funcionario" class="btn btn-primary btn-lg active mb-10" role="button" aria-pressed="true">Criar novo Usuario</a>
         <table class="table">
             <thead class="thead-dark">
                 <tr>
